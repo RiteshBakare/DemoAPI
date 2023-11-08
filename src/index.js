@@ -26,6 +26,9 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log(error);
 });
 
+app.get("/my",(req,res)=> {
+    res.send("Hello World :-) ")
+})
 
 // -------------------------------------------------------------------------------
 
