@@ -2,6 +2,7 @@ const express = require("express");
 const demoRoutes = require("./routes/demoRoutes");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const userRoutes = require("./routes/user.Routes");
 
 dotenv.config();
 
@@ -9,7 +10,8 @@ const app = express();
 
 app.use(express.json()); // use this for communacation with json only
 
-app.use("/demo",demoRoutes)
+app.use("/demo",demoRoutes);
+app.use("/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 // -------------------------------------------------------------------------------
